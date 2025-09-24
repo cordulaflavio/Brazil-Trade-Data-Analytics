@@ -40,13 +40,15 @@ Below is an image of the data model illustrating the table structure and relatio
 
 ### Project Folder Structure
 
+```text
 Brazil-Trade-Data-Analytics/
-├── data/ # Raw CSV datasets
-├── docs/ # Documentation, notes, or references
-├── images/ # Screenshots, icons, maps, and data model image
-├── icons/ # Custom icons used in the dashboard
-├── maps/ # Custom map files if applicable
-└── pbix/ # Power BI report files
+├── data/    # Links or instructions for downloading raw CSV datasets
+├── docs/    # Documentation, notes, and references
+├── images/  # Screenshots, icons, maps, and data model images
+├── icons/   # Custom icons used in the dashboard
+├── maps/    # Custom map files if applicable
+└── scripts/ # Selected DAX calculations and other scripts
+```
 
 ## 6. Dashboard
 ![Dashboard Preview](images/DashboardFullView.png)
