@@ -71,3 +71,5 @@ The dashboard includes six pages:
 
 Selected DAX calculations and measures can be found in the [`scripts/key_dax_measures.txt`](scripts/key_dax_measures.txt) file.  
 Screenshots and model images can be found in the [`images/`](images/) folder.
+The raw datasets used in this project are stored in the [`data/`](data/) folder as references and instructions for downloading.  
+
