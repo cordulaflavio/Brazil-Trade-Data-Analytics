@@ -1,0 +1,61 @@
+Brazil Total Exports = 
+CALCULATE(
+    SUM(FactImportsExports[FobValue]),
+    FactImportsExports[TradeType] = "export"
+)
+
+Brazil Total Exports (Formatted) = 
+VAR TotalValor = 
+    CALCULATE(
+        SUM(FactImportsExports[FobValue]),
+        FactImportsExports[TradeType] = "export"
+    )
+RETURN
+SWITCH(
+    TRUE(),
+    TotalValor >= 1000000000000, "$" & FORMAT(TotalValor/1000000000000, "#,##0.00") & "T",
+    TotalValor >= 1000000000, "$" & FORMAT(TotalValor/1000000000, "#,##0.00") & "B",
+    TotalValor >= 1000000, "$" & FORMAT(TotalValor/1000000, "#,##0.00") & "M",
+    TotalValor >= 1000, "$" & FORMAT(TotalValor/1000, "#,##0.00") & "K",
+    "$" & FORMAT(TotalValor, "#,##0")
+)
+
+% of Brazil Exports = 
+DIVIDE(
+    [Brazil Total Exports], 
+    CALCULATE([Brazil Total Exports], ALL(uf)),
+    0
+)
+
+Export Growth % = 
+DIVIDE(
+    [Total Exports by Selected Period] - [Total Exports Period Over Period],
+    [Total Exports Period Over Period]
+)
+
+Total Exports Period Over Period = 
+CALCULATE(
+    [Total Exports by Selected Period],
+    SAMEPERIODLASTYEAR('calendar'[Date])
+)
+
+Total Exports by Selected Period = 
+CALCULATE(
+    [Brazil Total Exports],
+    DATESBETWEEN(
+        'calendar'[Date],
+        FIRSTDATE( 'calendar'[Date] ),
+        LASTDATE( 'calendar'[Date] )
+    )
+)
+
+State Information = 
+VAR ufSelecionada = SELECTEDVALUE(UF[NO_UF])
+RETURN
+"Capital City: " & SELECTEDVALUE(uf[uf_capital_details]) & UNICHAR(10) &
+"Area: " & FORMAT(SELECTEDVALUE(uf[uf_area_da_unidade_territorial_2024_details]), "#,##0") & " km²" & UNICHAR(10) &
+"Population (2022): " & FORMAT(SELECTEDVALUE(uf[uf_populacao_ultimo_censo_2022_details]), "#,##0") & UNICHAR(10) &
+"Demographic Density: " & FORMAT(SELECTEDVALUE(uf[uf_densidade_demografica_2022_details]), "#,##0.0") & " hab./km²" & UNICHAR(10) &
+"Estimated Population (2025): " & FORMAT(SELECTEDVALUE(uf[uf_populacao_estimada_2025_details]), "#,##0") & UNICHAR(10) &
+"HDI (2021): " & FORMAT(SELECTEDVALUE(uf[uf_idh_2021_details]), "0.000") & UNICHAR(10) &
+"Total Vehicles (2024): " & FORMAT(SELECTEDVALUE(uf[uf_total_veiculos_2024_details]), "#,##0")
