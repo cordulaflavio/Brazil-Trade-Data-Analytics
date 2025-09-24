@@ -67,7 +67,10 @@ The dashboard includes six pages:
 - **Cards and KPI Indicators** – Highlight key metrics at a glance.  
 - **Line Charts & Ribbon Charts** – Visualize trends and relationships between products and countries.  
 - **Tables** – Display detailed trade data with sorting and filtering.  
-- **Maps** – Geographic representation of trade flows and state-level data.  
+- **Maps** – Geographic representation of trade flows and state-level data.
+
+**Explore the full interactive dashboard online:**  
+[View Dashboard Online](https://app.powerbi.com/view?r=eyJrIjoiYzgwZjRiOWUtZWMzOC00NjQwLTg4ZWUtOTEzMTAwZGNjMmQwIiwidCI6IjVhM2UxZWI5LWM3NzctNDQ1YS04MjQyLWQ4MjVhNDYxYjEyYiJ9)
 
 Selected DAX calculations and measures can be found in the [`scripts/key_dax_measures.txt`](scripts/key_dax_measures.txt) file.    
 Screenshots and model images can be found in the [`images/`](images/) folder.  
