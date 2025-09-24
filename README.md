@@ -30,9 +30,13 @@ The project followed a structured workflow to transform raw CSV files into an in
    - Data transformations: pivoting, merging, and cleaning operations.  
    - Integration of IBGE datasets to validate and update official state codes.  
 3. **Data Modeling (Power BI)** – Creation of relationships, calculated columns, and measures to support analysis.  
-   - The data model is available [here](images/data_model.png).  
 4. **Visualization (Power BI Dashboard)** – Development of interactive reports with filters by product, country, state, and time period.  
    - Includes a navigation bar that opens a slide panel with filter options for better user exploration.
+
+Below is an image of the data model illustrating the table structure and relationships:
+
+
+![Data Model View](images/ModelView.png)
 
 ### Project Folder Structure
 
@@ -45,7 +49,7 @@ Brazil-Trade-Data-Analytics/
 └── pbix/ # Power BI report files
 
 ## 6. Dashboard
-![Dashboard Preview](images/dashboard.png)
+![Dashboard Preview](images/DashboardFullView.png)
 
 The dashboard includes six pages:  
 
@@ -63,4 +67,5 @@ The dashboard includes six pages:
 - **Tables** – Display detailed trade data with sorting and filtering.  
 - **Maps** – Geographic representation of trade flows and state-level data.  
 
-Selected DAX calculations and measures can be found in the `scripts/key_dax_measures.txt` file.
+Selected DAX calculations and measures can be found in the [`scripts/key_dax_measures.txt`](scripts/key_dax_measures.txt) file.  
+Screenshots and model images can be found in the [`images/`](images/) folder.
